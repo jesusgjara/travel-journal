@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-theme="lofi" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Journal</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://i.ibb.co/ZG8HZJm/imgbin-email-icon-paper-plane-icon-origami-icon-png.webp"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <link href="/output.css" rel="stylesheet" /> -->
+  </head>
+  <body>
+    <div class="navbar bg-base-300">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="/userProfile">My Profile</a></li>
+            <!-- <li><a>Portfolio</a></li>
+            <li><a>About</a></li> -->
+          </ul>
+        </div>
+        <div class="dropdown dropdown-content">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="<%= avatar %>" alt="avatar" />
+            </div>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <!-- The button to open modal -->
+              <a href="#edit-profile" class="justify-between">Edit Profile</a>
+            </li>
+            <!-- <li><a>Settings</a></li> -->
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="navbar-center">
+        <a href="/userProfile" class="btn btn-ghost uppercase text-xl font-serif"
+          >Travel Journal<i class="fa-solid fa-paper-plane"></i
+        ></a>
+      </div>
+      <div class="navbar-end">
+        <button class="btn btn-ghost uppercase" data-toggle-theme="lofi,black" data-act-class="ACTIVECLASS"><i class="fa-solid fa-circle-half-stroke"></i></button>
+      </div>
+    </div>
+  </body>
+</html>

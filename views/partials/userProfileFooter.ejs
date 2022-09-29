@@ -5,6 +5,12 @@
   </footer>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  <script>
+    const target = document.getElementById('target')
+    const val = document.getElementsByClassName('remy')
+    console.log(val)
+    !val ? target : target.classList.add('hidden')
+  </script>
   <!-- Put this part before </body> tag -->
 <div class="modal" id="edit-profile">
   <div class="modal-box">

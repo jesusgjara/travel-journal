@@ -1,0 +1,21 @@
+<%- include('partials/profileHeader') -%>
+<div class="hero min-h-screen bg-base-100">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src="<%= post.image%>" class="max-w-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold"><%= post.title%></h1>
+        <p class="text-xl font-bold"><%= formatDate(post.date, 'MMMM DD YYYY')%></p>
+        <p class="py-6"><%= post.story%></p>
+        <a href="/userProfile" class="btn btn-primary normal-case">Return</a>
+    </form>
+    <form
+      action="/post/deletePost/<%= post.id %>?_method=DELETE"
+      method="POST"
+      class="col-3"
+    >
+      <button class="btn badge-primary fa fa-trash" type="submit"></button>
+    </form> 
+      </div>
+    </div>
+  </div>
+<%- include('partials/footer') -%>

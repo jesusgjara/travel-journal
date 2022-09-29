@@ -1,10 +1,11 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const cloudinary = require("../middleware/cloudinary");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/userProfile");
   }
   res.render("login", {
     title: "Login",
@@ -39,7 +40,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/profile");
+      res.redirect(req.session.returnTo || "/userProfile");
     });
   })(req, res, next);
 };
@@ -56,9 +57,21 @@ exports.logout = (req, res) => {
   });
 };
 
+// exports.getSignup = async (req, res) => {
+//   const user = await req.user
+//   if (!user) {
+//     res.render("signup", {
+//       title: "Create Account",
+//     });
+//   }else if (!user.profile === {}) {
+//     res.redirect("/profile");
+//   } else res.redirect("/createProfile");
+//   console.log(user.profile)
+// };
+
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/userProfile");
   }
   res.render("signup", {
     title: "Create Account",
@@ -110,7 +123,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/profile");
+          res.redirect("/userProfile");
         });
       });
     }

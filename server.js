@@ -9,6 +9,8 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const passport = require('passport')
 const mainRoutes = require("./routes/main")
+const profileRoutes = require("./routes/profile")
+const postsRoutes = require("./routes/posts")
 
 // Use .env file
 require('dotenv').config({ path: "./config/.env" })
@@ -59,6 +61,8 @@ app.use(flash())
 
 // Setup Routes
 app.use("/", mainRoutes)
+app.use("/userProfile", profileRoutes)
+app.use("/post", postsRoutes)
 
 // Server
 app.listen(PORT, () => {

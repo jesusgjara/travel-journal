@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 
-<% if (locals.messages.errors) { %>
+<!-- <% if (locals.messages.errors) { %>
     <% messages.errors.forEach( el => { %>
         <div class="alert alert-warning shadow-lg">
             <div>
@@ -19,52 +19,47 @@
             </div>
           </div>
     <% }) %>    
-<% } %>
+<% } %> -->
 
 <div class="hero min-h-screen" style="background-image: url(https://i.ibb.co/HBD8TTp/notebook-g2c19d51f0-1920.jpg);">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content flex-col lg:flex-col">
         <div class="text-center lg:text-left">
-          <h1 class="text-5xl font-bold">Signup:</h1>
+          <h1 class="text-5xl font-bold">Edit Profile:</h1>
         <!-- <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> -->
       </div>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
-        <form action="/signup" method="POST">
+        <form action="/userProfile/addProfile" enctype="multipart/form-data" method="POST">
           <div class="form-control">
-            <label for="userName" class="label">
-              <span class="label-text">User Name</span>
+            <label for="firstName" class="label">
+              <span class="label-text">First Name</span>
             </label>
-            <input type="text" placeholder="user name" class="input input-bordered" name="userName" id="userName" />
+            <input type="text" placeholder="first name" class="input input-bordered" name="firstName" id="firstName" />
           </div>
           <div class="form-control">
-            <label for="emailInputSignUp" class="label">
-              <span class="label-text">Email</span>
+            <label for="lastName" class="label">
+              <span class="label-text">Last Name</span>
             </label>
-            <input type="email" placeholder="email" class="input input-bordered" name="email" aria-describedby="emailHelp" id="emailInputSignUp" />
+            <input type="text" placeholder="last name" class="input input-bordered" name="lastName" id="lastName" />
           </div>
           <div class="form-control">
-            <label for="passwordInputSignUp" class="label">
-              <span class="label-text">Password</span>
+            <label for="avatar" class="label">
+              <span class="label-text">Upload a photo</span>
             </label>
-            <input type="password" placeholder="password" class="input input-bordered" name="password" id="passwordInputSignUp"/>
-            <!-- <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-            </label> -->
+            <input type="file" placeholder="avatar" class="block" name="avatar" id="avatar"/>
           </div>
           <div class="form-control">
-            <label for="confirmPassword" class="label">
-              <span class="label-text">Confirm Password</span>
+            <label for="bio" class="label">
+              <span class="label-text">Bio</span>
             </label>
-            <input type="password" placeholder="password" class="input input-bordered" name="confirmPassword" id="confirmPassword"/>
-            <!-- <label class="label">
-              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-            </label> -->
+            <input type="textarea" placeholder="bio" class="input input-bordered" name="bio" id="bio"/>
           </div>
           <div class="form-control mt-6">
-            <button type="submit" class="btn btn-outline btn-primary uppercase">Signup</button>
+            <button type="submit" class="btn btn-primary uppercase">Create</button>
           </div>
         </form>
+        <a href="/logout" class="btn btn-primary uppercase">Logout</a>
         </div>
       </div>
     </div>

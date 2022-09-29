@@ -1,0 +1,73 @@
+<%- include('partials/profileHeader') -%>
+<div
+  class="hero min-h-screen"
+  style="
+    background-image: url(https://i.ibb.co/HBD8TTp/notebook-g2c19d51f0-1920.jpg);
+  "
+>
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content flex-col lg:flex-col">
+    <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-bold">New Entry:</h1>
+      <!-- <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> -->
+    </div>
+    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div class="card-body">
+        <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+          <div class="form-control">
+            <label for="titleInput" class="label">
+              <span class="label-text">Travel</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Country/City"
+              class="input input-bordered"
+              name="titleInput"
+              aria-describedby="titleInput"
+              id="titleInput"
+            />
+          </div>
+          <div class="form-control">
+            <label for="dateInput" class="label">
+              <span class="label-text">Date</span>
+            </label>
+            <input type="date" class="bg-base-100" name="dateInput" id="dateInput" />
+            <!-- <label class="label">
+              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+            </label> -->
+            <div class="form-control">
+              <label for="postImg" class="label">
+                <span class="label-text">Upload a photo</span>
+              </label>
+              <input
+                type="file"
+                class="file:text-sm file:font-medium file:bg-base-100"
+                name="postImg"
+                id="postImg"
+              />
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="story" class="label">
+              <span class="label-text">Story</span>
+            </label>
+            <textarea
+              class="input input-bordered"
+              name="story"
+              id="story"
+              cols="20"
+              rows="5"
+            ></textarea>
+            <!-- <input type="text" placeholder="bio" class="input input-bordered" name="bio" id="bio"/> -->
+          </div>
+          <div class="form-control mt-6">
+            <button type="submit" class="btn btn-outline btn-primary uppercase">
+              Create Entry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
