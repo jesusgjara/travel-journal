@@ -65,6 +65,6 @@ app.use("/userProfile", profileRoutes)
 app.use("/post", postsRoutes)
 
 // Server
-app.listen(PORT, () => {
+app.listen(PORT || process.env.PORT, () => {
     console.log(`Server is running on port: ${PORT}`)
 })
