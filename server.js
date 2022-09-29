@@ -15,7 +15,7 @@ const postsRoutes = require("./routes/posts")
 // Use .env file
 require('dotenv').config({ path: "./config/.env" })
 
-const PORT = process.env.PORT
+// const PORT = process.env.PORT
 
 // Passport config
 require("./config/passport")(passport)
@@ -65,6 +65,6 @@ app.use("/userProfile", profileRoutes)
 app.use("/post", postsRoutes)
 
 // Server
-app.listen(PORT || process.env.PORT, () => {
-    console.log(`Server is running on port: ${PORT}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port: ${process.env.PORT}`)
 })
